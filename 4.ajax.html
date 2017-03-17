@@ -1,0 +1,27 @@
+<html lang="en" ng-app="myApp">
+<header>
+	<meta charset="UTF-8">
+	<title>Angular Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="js/4.ajax.js"></script>
+</header>
+<body>
+	<div ng-controller="MyController">
+	    <input ng-model="query"/>
+	    <select ng-model="artistOrder">
+	    	<option value="name">Name</option>
+            <option value="reknown">Reknown</option>
+	    </select>
+	    <input type="radio" ng-model="direction" name="direction" checked> asc
+  	    <input type="radio" ng-model="direction" name="direction" value="reverse"> desc
+		<ul>
+		    <!-- filters -->
+			<li ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction | limitTo: 1 "> 
+				{{ item.shortname | uppercase }}{{ item.name }}
+				<!-- ng-src : prevent image load until angular is finish loading up -->
+				<img ng-src="images/{{ item.short-name }}"/>
+			</li>
+		</ul>
+	</div>                  
+</body>
+</html>

@@ -1,0 +1,15 @@
+<input ng-model="query"/>
+	    <select ng-model="artistOrder">
+	    	<option value="name">Name</option>
+            <option value="reknown">Reknown</option>
+	    </select>
+	    <input type="radio" ng-model="direction" name="direction" checked> asc
+  	    <input type="radio" ng-model="direction" name="direction" value="reverse"> desc
+		<ul ng-show="query"> <!-- only show if query==true-->
+			<li class="artist" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction"> <!-- | limitTo: 1 --> 
+			    <a href="#!details/{{ artists.indexOf(item) }}">
+					{{ item.shortname | uppercase }}{{ item.name }}
+					<img ng-src="images/{{ item.short-name }}"/>
+				</a>
+			</li>
+		</ul>

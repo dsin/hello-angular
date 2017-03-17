@@ -1,0 +1,19 @@
+<html lang="en" ng-app="myApp">
+<header>
+	<meta charset="UTF-8">
+	<title>Angular Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="js/3.data.js"></script>
+</header>
+<body>
+	<div ng-controller="MyController">
+		<ul>
+			<li ng-repeat="item in artists">
+				{{ item.shortname }}{{ item.name }}
+				<!-- ng-src : prevent image load until angular is finish loading up -->
+				<img ng-src="images/{{ item.short-name }}"/>
+			</li>
+		</ul>
+	</div>                  
+</body>
+</html>

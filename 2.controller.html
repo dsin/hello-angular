@@ -1,0 +1,14 @@
+<html lang="en" ng-app="myApp">
+<header>
+	<meta charset="UTF-8">
+	<title>Angular Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="js/2.controller.js"></script>
+</header>
+<body>
+	<div ng-controller="MyController">
+		<h1>{{ author.name }}</h1>
+		<p>{{ author.title + ', ' + author.company }}</p>
+	</div>                  
+</body>
+</html>

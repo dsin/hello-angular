@@ -1,0 +1,13 @@
+<!-- directive=command
+ng-* : angular directive -->
+<html lang="en" ng-app>
+<header>
+	<meta charset="UTF-8">
+	<title>Angular Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+</header>
+<body>
+	<input type="text" ng-model="name"/> <!-- binding input field -> template -->
+	<h2>{{ name }}</h2>                  <!-- 2 way data binding, expression -->
+</body>
+</html>
