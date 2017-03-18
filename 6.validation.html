@@ -1,0 +1,18 @@
+<html>
+<script src="lib/angular/angular.min.js"></script>
+<script langauge="javascript">
+	var myApp = angular.module("myApp", []);
+	myApp.controller('MeetingController', ['$scope', function($scope){
+		$scope.message="success!";
+	}])
+</script>
+<body ng-app="myApp" ng-controller="MeetingController">
+	<form name="myform" ng-submit="addMeeting()" novalidate>
+		<input type="text" name="meetingname" ng-model="meetingname" required/>
+		{{ message }}
+		{{ myform.$invalid }}
+		<!-- $invalid will look at ng-required -->
+		<button type="submit" name="button" ng-disabled="myform.$invalid">+</button>
+	</form>
+</body>
+</html>
